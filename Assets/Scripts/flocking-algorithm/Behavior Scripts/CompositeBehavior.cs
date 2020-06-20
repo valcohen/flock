@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Flock/Behavior/Composite")]
 public class CompositeBehavior : FlockBehavior
 {
+    [Header("Behaviors & Weights")]
     public FlockBehavior[] behaviors;
     public float[] weights;
 
@@ -13,7 +14,7 @@ public class CompositeBehavior : FlockBehavior
         //handle data mismatch
         if (weights.Length != behaviors.Length)
         {
-            Debug.LogError("Data mismatch in " + name, this);
+            Debug.LogError($"Data mismatch in {name}", this);
             return Vector3.zero;
         }
 
@@ -34,12 +35,8 @@ public class CompositeBehavior : FlockBehavior
                 }
 
                 move += partialMove;
-
             }
         }
-
         return move;
-
-
     }
 }

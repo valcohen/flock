@@ -1,23 +1,31 @@
 ﻿<Properties StartupConfiguration="{BE4B6F77-93E4-6C72-FFF8-E8176F60738E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/flocking-algorithm/FilteredFlockBehavior.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/flocking-algorithm/Editor/CompositeBehaviorEditor.cs">
     <Files>
-      <File FileName="Assets/Scripts/flocking-algorithm/Flock.cs" Line="58" Column="73" />
-      <File FileName="Assets/Scripts/flocking-algorithm/FlockAgent.cs" Line="18" Column="46" />
-      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/CohesionBehavior.cs" Line="26" Column="6" />
-      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/StayInRadiusBehavior.cs" Line="19" Column="9" />
-      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/AlignmentBehavior.cs" Line="19" Column="30" />
-      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/SteeredCohesionBehavior.cs" Line="6" Column="47" />
-      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/AvoidanceBehavior.cs" Line="28" Column="9" />
-      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/CompositeBehavior.cs" Line="28" Column="20" />
-      <File FileName="Assets/Scripts/flocking-algorithm/Filter Scripts/PhysicsLayerFilter.cs" Line="6" Column="14" />
-      <File FileName="Assets/Scripts/flocking-algorithm/Filter Scripts/SameFlockFilter.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/flocking-algorithm/FlockBehavior.cs" Line="9" Column="1" />
-      <File FileName="Assets/Scripts/flocking-algorithm/FilteredFlockBehavior.cs" Line="5" Column="23" />
+      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/CompositeBehavior.cs" Line="9" Column="28" />
+      <File FileName="Assets/Scripts/flocking-algorithm/Flock.cs" Line="58" Column="73" NotebookId="1" />
+      <File FileName="Assets/Scripts/flocking-algorithm/FlockAgent.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/CohesionBehavior.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/StayInRadiusBehavior.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/AlignmentBehavior.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/SteeredCohesionBehavior.cs" Line="6" Column="47" NotebookId="1" />
+      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/AvoidanceBehavior.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/flocking-algorithm/Filter Scripts/PhysicsLayerFilter.cs" Line="6" Column="14" NotebookId="1" />
+      <File FileName="Assets/Scripts/flocking-algorithm/Filter Scripts/SameFlockFilter.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/flocking-algorithm/FlockBehavior.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/flocking-algorithm/FilteredFlockBehavior.cs" Line="5" Column="23" NotebookId="1" />
+      <File FileName="Assets/Scripts/flocking-algorithm/Editor/CompositeBehaviorEditor.cs" Line="32" Column="19" NotebookId="1" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="flock" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0195490a-ad6e-44ef-9578-3ce252ae5735" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
