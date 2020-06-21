@@ -12,11 +12,14 @@ public class StayInRadiusBehavior : FlockBehavior
     {
         Vector3 centerOffset = center - agent.transform.position;
         float t = centerOffset.magnitude / radius;
+
+        // if within 90% of the radius, don't change direction
         if (t < 0.9f)
         {
             return Vector3.zero;
         }
 
+        // else reverse direction
         return centerOffset * t * t;
     }
 }

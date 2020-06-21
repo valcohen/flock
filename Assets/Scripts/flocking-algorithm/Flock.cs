@@ -26,12 +26,16 @@ public class Flock : MonoBehaviour
     float squareAvoidanceRadius;
     public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
 
+    private float stayInsideRadius = 0f;
+    private Vector3 stayInsideCenter = Vector3.zero;
+
     // Start is called before the first frame update
     void Start()
     {
-        squareMaxSpeed = maxSpeed * maxSpeed;
-        squareNeighborRadius = neighborRadius * neighborRadius;
-        squareAvoidanceRadius = squareNeighborRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
+        squareMaxSpeed          = maxSpeed * maxSpeed;
+        squareNeighborRadius    = neighborRadius * neighborRadius;
+        squareAvoidanceRadius   = squareNeighborRadius
+                                * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
 
         for (int i = 0; i < startingCount; i++)
         {
@@ -40,10 +44,21 @@ public class Flock : MonoBehaviour
                 Random.insideUnitCircle * startingCount * AgentDensity,
                 Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
                 transform
-                );
+            );
             newAgent.name = "Agent " + i;
             newAgent.Initialize(this);
             agents.Add(newAgent);
+        }
+
+        if (behavior is CompositeBehavior ) {
+            var cbs = ((CompositeBehavior)behavior).behaviors;
+            foreach (var b in cbs) {
+                if ( b is StayInRadiusBehavior) {
+                    this.stayInsideRadius = ((StayInRadiusBehavior)b).radius;
+                    this.stayInsideCenter = ((StayInRadiusBehavior)b).center;
+                    break;
+                }
+            }
         }
     }
 
@@ -55,7 +70,8 @@ public class Flock : MonoBehaviour
             List<Transform> context = GetNearbyObjects(agent);
 
             //FOR DEMO ONLY
-            agent.GetComponentInChildren<MeshRenderer>().material.color = Color.Lerp(Color.white, Color.red, context.Count / 6f);
+            // agent.GetComponentInChildren<MeshRenderer>().material.color =
+            //    Color.Lerp(Color.white, Color.red, context.Count / 6f);
 
             Vector3 move = behavior.CalculateMove(agent, context, this);
             move *= driveFactor;
@@ -64,6 +80,27 @@ public class Flock : MonoBehaviour
                 move = move.normalized * maxSpeed;
             }
             agent.Move(move);
+        }
+    }
+
+    void OnDrawGizmos() {
+        // visualize agents
+        Gizmos.color = Color.gray;
+        foreach( var agent in agents) {
+            Gizmos.DrawRay(
+                agent.transform.position,
+                agent.transform.forward * avoidanceRadiusMultiplier
+            );
+            var bb = agent.transform.GetComponent<Renderer>().bounds;
+            Gizmos.DrawWireSphere(bb.center, bb.extents.magnitude);
+            
+        }
+
+
+        // visualize StayInRadius 
+        if (stayInsideRadius > 0) {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(stayInsideCenter, stayInsideRadius);
         }
     }
 
