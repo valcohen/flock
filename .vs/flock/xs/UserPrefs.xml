@@ -1,23 +1,13 @@
 ﻿<Properties StartupConfiguration="{BE4B6F77-93E4-6C72-FFF8-E8176F60738E}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/flocking-algorithm/Behavior Scripts/StayInRadiusBehavior.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/holistic3d-flock/Flock.cs">
     <Files>
-      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/CompositeBehavior.cs" Line="9" Column="28" />
-      <File FileName="Assets/Scripts/flocking-algorithm/Flock.cs" Line="72" Column="1" NotebookId="1" />
-      <File FileName="Assets/Scripts/flocking-algorithm/FlockAgent.cs" Line="27" Column="26" NotebookId="1" />
-      <File FileName="Assets/Scripts/flocking-algorithm/Filter Scripts/SameFlockFilter.cs" Line="1" Column="1" NotebookId="1" />
-      <File FileName="Assets/Scripts/flocking-algorithm/Behavior Scripts/StayInRadiusBehavior.cs" Line="6" Column="40" NotebookId="1" />
+      <File FileName="Assets/Scripts/holistic3d-flock/globalFlock.cs" Line="27" Column="10" />
+      <File FileName="Assets/Scripts/holistic3d-flock/Flock.cs" Line="5" Column="21" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="flock" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0195490a-ad6e-44ef-9578-3ce252ae5735" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="bb231c52-e4eb-4c05-b27b-ed70eadafb28" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 70536534}
   m_LocalRotation: {x: -0, y: -0, z: 0.14357306, w: 0.98963976}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 0.5, y: 2, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -587,7 +587,7 @@ GameObject:
   - component: {fileID: 1196076131}
   - component: {fileID: 1196076130}
   m_Layer: 0
-  m_Name: flock
+  m_Name: flockManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -602,17 +602,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1196076129}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 185b9f40235c54421b11efd935b447db, type: 3}
+  m_Script: {fileID: 11500000, guid: fb7214c1d433949e2a23069792c54a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agentPrefab: {fileID: 4240948444310619314, guid: 3b49eaafdf6ee4d4789653dc807c3afc,
+  agentPrefab: {fileID: 7708676779512147072, guid: 6d28af1041fe34f5abd0f87662390823,
     type: 3}
-  behavior: {fileID: 11400000, guid: f72193caeae204c52960b7410c6245ee, type: 2}
-  startingCount: 10
-  driveFactor: 1
-  maxSpeed: 5
-  neighborRadius: 1.5
-  avoidanceRadiusMultiplier: 0.5
+  goalPrefab: {fileID: 7950833141896160041, guid: d653bd4327d994644a235a253281f462,
+    type: 3}
 --- !u!4 &1196076131
 Transform:
   m_ObjectHideFlags: 0
