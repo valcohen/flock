@@ -7,7 +7,7 @@ namespace holistic3D {
 
     public class Flock : MonoBehaviour
     {
-        public int volumeRadius = 5;
+        public float volumeRadius = 5f;
 
         public GameObject agentPrefab;
         public GameObject goalPrefab;
@@ -19,13 +19,10 @@ namespace holistic3D {
         public Vector3 goalPos = Vector3.zero;
 
         // Start is called before the first frame update
-        void Start()
-        {
+        void Start() {
             allAgents = new GameObject[numAgents];
 
-            RenderSettings.fogColor = Camera.main.backgroundColor;
-            RenderSettings.fogDensity = 0.03f;
-            RenderSettings.fog = true;
+            setFog();
 
             goalInstance = Instantiate(goalPrefab, goalPos, Quaternion.identity, this.transform);
 
@@ -34,20 +31,29 @@ namespace holistic3D {
                     Random.Range(-volumeRadius, volumeRadius),
                     Random.Range(-volumeRadius, volumeRadius),
                     Random.Range(-volumeRadius, volumeRadius)
-                );
-                allAgents[i] = (GameObject) Instantiate(agentPrefab, pos, Quaternion.identity, this.transform);
+                ) + this.transform.position;
+                allAgents[i] = (GameObject)Instantiate(agentPrefab, pos, Quaternion.identity, this.transform);
                 allAgents[i].GetComponent<FlockAgent>().myFlock = this;
             }
 
         }
 
+        private static void setFog() {
+            RenderSettings.fogColor = Camera.main.backgroundColor;
+            RenderSettings.fogDensity = 0.01f;
+            RenderSettings.fog = true;
+        }
+
         // Update is called once per frame
-        void Update()
-        {
-            if ( Random.Range(0, 10000) < 50 ) {
+        void Update() {
+            moveGoal();
+        }
+
+        private void moveGoal() {
+            if (Random.Range(0, 10000) < 50) {
                 goalPos = new Vector3(
                     Random.Range(-volumeRadius, volumeRadius),
-                    Random.Range(-volumeRadius, volumeRadius),
+                    Random.Range(            0, volumeRadius * 2 - 1) + .05f,
                     Random.Range(-volumeRadius, volumeRadius)
                 );
                 goalInstance.transform.position = goalPos;

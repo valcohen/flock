@@ -6,7 +6,8 @@ namespace holistic3D {
 
     public class FlockAgent : MonoBehaviour
     {
-        public float speed          = 0.1f;
+        private float speed          = 0.1f;
+
         public float rotationSpeed  = 4.0f;
         public float minSpeed       = 0.8f;
         public float maxSpeed       = 2.0f;
@@ -14,9 +15,12 @@ namespace holistic3D {
         Vector3 avgHeading;
         Vector3 avgPosition;
 
-        float   maxNeighborDistance = 3.0f;
-        float   minNeighborDistance = 1.0f;
+        public float   maxNeighborDistance = 3.0f;
+        public float   minNeighborDistance = 1.0f;
 
+        public Material turnMaterial;
+        private Renderer myRenderer;
+        private Material originalMaterial;
         public Vector3  newGoalPos;
         public Flock myFlock   {get; set;}
 
@@ -26,7 +30,10 @@ namespace holistic3D {
 
         // Start is called before the first frame update
         void Start() {
-            speed = Random.Range(speed * 0.75f, speed * 1.25f);
+            speed = Random.Range(minSpeed, maxSpeed);
+
+            myRenderer = this.GetComponent<Renderer>();
+            originalMaterial = myRenderer.material;
 
             // anim = this.GetComponent<Animation>()["Motion"];
             setAnimSpeed();
@@ -37,14 +44,17 @@ namespace holistic3D {
         }
 
         private void OnTriggerEnter(Collider other) {
+            Debug.Log($"entering collider on {other.name}");
             if (!isTurning) {
                 newGoalPos = this.transform.position - other.gameObject.transform.position;
-                Debug.Log($"Turning away from '{other.transform.name}'"); //, bearing {newGoalPos}");
+                Debug.Log($"Turning away from '{other.name}'"); //, bearing {newGoalPos}");
             }
+            myRenderer.material = turnMaterial;
             isTurning = true;
         }
 
         private void OnTriggerExit(Collider other) {
+            myRenderer.material = originalMaterial;
             isTurning = false;
         }
 

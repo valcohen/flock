@@ -12,7 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da37ce1fdc65649329a1bed96f95ce7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  rotationSpeed: 1
+  minSpeed: 0.8
+  maxSpeed: 2
+  maxNeighborDistance: 2
+  minNeighborDistance: 0.5
+  turnMaterial: {fileID: 2100000, guid: 04bf49d27de2c49a8aab815c2e0afabe, type: 2}
+  newGoalPos: {x: 0, y: 0, z: 0}
 --- !u!1001 &3669602527953989820
 PrefabInstance:
   m_ObjectHideFlags: 0
